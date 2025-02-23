@@ -213,8 +213,6 @@ section {
   height: 2rem;
 }
 
-
-
 /* BUTTONS */
 
 .btn-container {
@@ -341,7 +339,7 @@ section {
   flex-wrap: wrap;
   flex-direction: row;
   gap: 2.5rem;
-  justify-content: left;
+  justify-content: center;
   height: 70%;
   object-fit: cover;
 }
