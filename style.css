@@ -367,6 +367,7 @@ article .icon {
 }
 
 .project-img {
+  object-fit: cover;
   border-radius: 2rem;
   width: 90%;
   height: 90%;
