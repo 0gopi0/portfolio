@@ -1,265 +1,456 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>John Doe - Full Stack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#10B981',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3B82F6",
+              secondary: "#10B981",
+            },
+          },
+        },
+      };
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300"
+  >
     <!-- Navigation -->
     <nav class="fixed w-full bg-white dark:bg-gray-800 shadow-lg z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold text-primary">VVG</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="#home" class="hover:text-primary">Home</a>
-                    <a href="#about" class="hover:text-primary">About</a>
-                    <a href="#projects" class="hover:text-primary">Projects</a>
-                    <a href="#contact" class="hover:text-primary">Contact</a>
-                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block"></i>
-                    </button>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="#home" class="block px-3 py-2 hover:text-primary">Home</a>
-                    <a href="#about" class="block px-3 py-2 hover:text-primary">About</a>
-                    <a href="#projects" class="block px-3 py-2 hover:text-primary">Projects</a>
-                    <a href="#contact" class="block px-3 py-2 hover:text-primary">Contact</a>
-                    <button id="theme-toggle-mobile" class="w-full text-left px-3 py-2 hover:text-primary">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block"></i>
-                        Toggle Theme
-                    </button>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <span class="text-xl font-bold text-primary">VVG</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-4">
+            <a href="#home" class="hover:text-primary">Home</a>
+            <a href="#about" class="hover:text-primary">About</a>
+            <a href="#projects" class="hover:text-primary">Projects</a>
+            <a href="#contact" class="hover:text-primary">Contact</a>
+            <button
+              id="theme-toggle"
+              class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+            >
+              <i class="fas fa-moon dark:hidden"></i>
+              <i class="fas fa-sun hidden dark:block"></i>
+            </button>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-button"
+              class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
         </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#home" class="block px-3 py-2 hover:text-primary">Home</a>
+            <a href="#about" class="block px-3 py-2 hover:text-primary"
+              >About</a
+            >
+            <a href="#projects" class="block px-3 py-2 hover:text-primary"
+              >Projects</a
+            >
+            <a href="#contact" class="block px-3 py-2 hover:text-primary"
+              >Contact</a
+            >
+            <button
+              id="theme-toggle-mobile"
+              class="w-full text-left px-3 py-2 hover:text-primary"
+            >
+              <i class="fas fa-moon dark:hidden"></i>
+              <i class="fas fa-sun hidden dark:block"></i>
+              Toggle Theme
+            </button>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Vemula venkata gopi</h1>
-                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8">Full Stack Developer | Master's in Computer Science</p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600">Contact Me</a>
-                    <a href="#projects" class="border border-primary text-primary px-6 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">View Projects</a>
-                    <a href="./pictures/Resume.pdf" download="./pictures/Resume.pdf" class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-green-600 flex items-center justify-center space-x-2">
-                        <i class="fas fa-download"></i>
-                        <span>Download CV</span>
-                    </a>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            Vemula venkata gopi
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8">
+            Full Stack Developer | Master's in Computer Science
+          </p>
+          <div
+            class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+          >
+            <a
+              href="#contact"
+              class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600"
+              >Contact Me</a
+            >
+            <a
+              href="#projects"
+              class="border border-primary text-primary px-6 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              >View Projects</a
+            >
+            <a
+              href="./pictures/Resume.pdf"
+              download="./pictures/Resume.pdf"
+              class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-green-600 flex items-center justify-center space-x-2"
+            >
+              <i class="fas fa-download"></i>
+              <span>Download CV</span>
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">About Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <p class="text-base sm:text-lg mb-4">I am a full stack web developer, recently completed master's in computer science (MCA), passionate about building full stack web solutions and always open to learning new tech and collaborating with creative people.</p>
-                    <p class="text-base sm:text-lg mb-4">My expertise includes:</p>
-                    <ul class="space-y-2 text-base sm:text-lg">
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Languages: JavaScript, TypeScript, Python, Java, PHP</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Frameworks: React.js, Node.js, Next.js, Express.js, Nest.js, Django, Laravel</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Database: MongoDB, MySQL</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Other tools: Tailwind, DaisyUI, Bootstrap, Material UI, git, github, cursor</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex justify-center order-1 md:order-2">
-                    <img src="pictures/profile_pic.png" alt="Profile Picture" class="w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover shadow-lg">
-                </div>
-            </div>
+    <section
+      id="about"
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+    >
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">
+          About Me
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="order-2 md:order-1">
+            <p class="text-base sm:text-lg mb-4">
+              I am a full stack web developer, with 9 months experience in
+              building full stack web applications. with MCA degree.
+            </p>
+            <p class="text-base sm:text-lg mb-4">My expertise includes:</p>
+            <ul class="space-y-2 text-base sm:text-lg">
+              <li class="flex items-start">
+                <span class="mr-2">•</span>
+                <span>Languages: JavaScript, TypeScript, Python</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2">•</span>
+                <span>Frameworks: React.js, Node.js, Next.js, Express.js</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2">•</span>
+                <span>Database: MongoDB, MySQL, Mongoose</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2">•</span>
+                <span
+                  >Other Skills: Tailwind, DaisyUI, Bootstrap, Material UI, git,
+                  github, DSA, Redux</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex justify-center order-1 md:order-2">
+            <img
+              src="pictures/profile_pic.png"
+              alt="Profile Picture"
+              class="w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover shadow-lg"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="pictures/p1.png" alt="E-Commerce Platform" class="w-full h-48 object-cover">
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-bold mb-2">Games Hub</h3>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4">Games hub is a Game exploration website built using React, TypeScript, Tailwindcss, Rawg API, it has a modren ui with features like dark mode, sorting, cashing and more.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">React</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">Tailwind css</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">Typescript</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="pictures/p2.png" alt="Task Management App" class="w-full h-48 object-cover">
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-bold mb-2">Product Listing App</h3>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4">A Product listing app where user can add, update, delete products, this is an application built using MERN stack, REST API</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">React.js</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">Node.js</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">Express.js</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">MongoDB</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">REST API</span>
-
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">Tailwind CSS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="pictures/no_image.gif" alt="Social Media Dashboard" class="w-full h-48 object-cover">
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-bold mb-2">Music academy online courses</h3>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4">A comprehensive music academy online courses website where user can log-in/sign-up, and whatch the courses</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">Next.js</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">Tailwind CSS</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">MongoDB</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">REST API</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">Auth.js</span>
-
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="pictures/no_image.gif" alt="Weather Forecast App" class="w-full h-48 object-cover">
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-bold mb-2">Blogs website</h3>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4">Blogs website where user can log-in/sign-up, add blogs, edit blogs, delete blogs, view blogs, and user only allowed to see the blogs of users he's been following</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">PHP</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">Laravel</span>
-                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm">MySQL</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">
+          My Projects
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <a
+            href="https://game-hub-two-flax.vercel.app/"
+            target="_blank"
+            class="block bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-xl"
+          >
+            <img
+              src="pictures/p1.png"
+              alt="E-Commerce Platform"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4 sm:p-6">
+              <h3 class="text-lg sm:text-xl font-bold mb-2">Games Hub</h3>
+              <p
+                class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4"
+              >
+                Games hub is a Game exploration website built using React,
+                TypeScript, Tailwindcss, Rawg API, it has a modren ui with
+                features like dark mode, sorting, cashing and more.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Tailwind css</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Typescript</span
+                >
+              </div>
             </div>
+          </a>
+
+          <!-- Project 2 -->
+          <a
+            href="https://stylevee-frontend.onrender.com/"
+            target="_blank"
+            class="block bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-xl"
+          >
+            <img
+              src="pictures/p3.png"
+              alt="Social Media Dashboard"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4 sm:p-6">
+              <h3 class="text-lg sm:text-xl font-bold mb-2">
+                Styleve Ecommerce
+              </h3>
+              <p
+                class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4"
+              >
+                A comprehensive ecommerce website with login signup admin
+                access, product management, order management, and more.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Node.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >MongoDB</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Express</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Mongoose</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Redux</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Project 3 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+          >
+            <img
+              src="pictures/p2.png"
+              alt="Task Management App"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4 sm:p-6">
+              <h3 class="text-lg sm:text-xl font-bold mb-2">
+                Product Listing App
+              </h3>
+              <p
+                class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4"
+              >
+                A Product listing app where user can add, update, delete
+                products, this is an application built using MERN stack, REST
+                API
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >React.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Node.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Express.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >MongoDB</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >REST API</span
+                >
+
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Tailwind CSS</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+          >
+            <img
+              src="pictures/no_image.gif"
+              alt="Weather Forecast App"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4 sm:p-6">
+              <h3 class="text-lg sm:text-xl font-bold mb-2">Issue Tracker</h3>
+              <p
+                class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4"
+              >
+                Issue tracker to assign and track progress of issues, using
+                next.js, tailwind css, mongodb, and auth.js with serverside
+                rendering
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Next.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >MongoDB</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
+                  >Auth.js</span
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">Get in Touch</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
-                    <div class="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                        <i class="fas fa-envelope text-primary text-2xl"></i>
-                        <div>
-                            <h3 class="font-semibold">Email</h3>
-                            <p class="text-gray-600 dark:text-gray-400">gopivenkatvemula@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                        <i class="fas fa-phone text-primary text-2xl"></i>
-                        <div>
-                            <h3 class="font-semibold">Phone</h3>
-                            <p class="text-gray-600 dark:text-gray-400">+91 8328212741</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                        <i class="fab fa-linkedin text-primary text-2xl"></i>
-                        <div>
-                            <h3 class="font-semibold">LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/0gopi0/" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-primary">linkedin.com/in/0gopi0/</a>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                        <i class="fab fa-github text-primary text-2xl"></i>
-                        <div>
-                            <h3 class="font-semibold">GitHub</h3>
-                            <a href="https://github.com/0gopi0?tab=repositories" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-primary">github.com/0gopi0</a>
-                        </div>
-                    </div>
-                </div>
+    <section
+      id="contact"
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800"
+    >
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">
+          Get in Touch
+        </h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
+            <div
+              class="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <i class="fas fa-envelope text-primary text-2xl"></i>
+              <div>
+                <h3 class="font-semibold">Email</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  gopivenkatvemula@gmail.com
+                </p>
+              </div>
             </div>
+            <div
+              class="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <i class="fas fa-phone text-primary text-2xl"></i>
+              <div>
+                <h3 class="font-semibold">Phone</h3>
+                <p class="text-gray-600 dark:text-gray-400">+91 8328212741</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <i class="fab fa-linkedin text-primary text-2xl"></i>
+              <div>
+                <h3 class="font-semibold">LinkedIn</h3>
+                <a
+                  href="https://www.linkedin.com/in/0gopi0/"
+                  target="_blank"
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary"
+                  >linkedin.com/in/0gopi0/</a
+                >
+              </div>
+            </div>
+            <div
+              class="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <i class="fab fa-github text-primary text-2xl"></i>
+              <div>
+                <h3 class="font-semibold">GitHub</h3>
+                <a
+                  href="https://github.com/0gopi0?tab=repositories"
+                  target="_blank"
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary"
+                  >github.com/0gopi0</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    
 
     <script>
-        // Dark mode toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-        const html = document.documentElement;
+      // Dark mode toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+      const html = document.documentElement;
 
-        function toggleDarkMode() {
-            html.classList.toggle('dark');
-        }
+      function toggleDarkMode() {
+        html.classList.toggle("dark");
+      }
 
-        themeToggle.addEventListener('click', toggleDarkMode);
-        themeToggleMobile.addEventListener('click', toggleDarkMode);
+      themeToggle.addEventListener("click", toggleDarkMode);
+      themeToggleMobile.addEventListener("click", toggleDarkMode);
 
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+          // Close mobile menu if open
+          mobileMenu.classList.add("hidden");
         });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
-            });
-        });
+      });
     </script>
-</body>
-</html> 
+  </body>
+</html>
